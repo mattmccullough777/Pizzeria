@@ -1,0 +1,25 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %} 
+
+<div style="background-image:url('https://www.stockvault.net/data/2020/12/20/281740/preview16.jpg');
+    padding:5px;width:auto;height:5000px;border:1px solid black;background-repeat:no-repeat;">
+
+<p style="color:white;font-family:'Times New Roman';font-size:45px;text-align:left;"> Pizza Choices </p>
+
+
+<ul>
+    {% for pizza in all_pizza_choices %}
+
+    <li> 
+        <a style="color:white;font-family:'Times New Roman';font-size:25px;"href="{% url 'pizzas:pizza' pizza.id %}"> {{ pizza }} </a>
+    </li>
+
+    {% empty %} 
+    <li> No pizzas have been addded yet.</li>
+    {% endfor %} 
+
+</ul>
+
+</div>
+{% endblock content %} 

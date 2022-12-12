@@ -1,0 +1,42 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %} 
+<div style="background-image:url('https://www.stockvault.net/data/2020/12/20/281740/preview16.jpg');
+    padding:5px;width:auto;height:1000px;border:1px solid black;background-repeat:no-repeat;">
+ 
+    <p>
+        <img src="https://kitchenatics.com/wp-content/uploads/2020/09/Cheese-pizza-1.jpg" style="float: right; margin-right: 15px;width:225px;height:175px; padding-bottom: 15px">
+        <p style="color:black;float: right">Cheese Pizza&nbsp&nbsp&nbsp</p>
+    </p>
+
+    <p>
+        <img src="http://www.kayscleaneats.com/wp-content/uploads/2020/07/unadjustednonraw_thumb_a8b0.jpg" style="float: right; clear:both;margin-right: 15px;width:225px;height:175px; padding-bottom: 15px">
+        <p style="color:black;float: right">Hawaiian Pizza&nbsp&nbsp&nbsp</p>
+    </p>
+
+    <p>
+        <img src="https://www.pngitem.com/pimgs/m/504-5040768_meat-lovers-pizza-hd-png-download.png" style="float: right; clear:both;margin-right: 15px;width:225px;height:175px">
+        <p style="color:black;float: right">Meat Lovers Pizza&nbsp&nbsp&nbsp</p>
+    </p>
+
+<p style="color:white;font-family:'Times New Roman';font-size:35px;text-align:left;">Pizza: {{ pizza }} </p>
+
+
+<ul>
+    {% for e in entries %}
+
+    <li style="color:white;font-family:'Times New Roman';font-size:23px;text-align:left;">{{ e.topping_name }} </li>
+
+
+    {% empty %} 
+    <li> No entries for this pizza have been addded yet.</li>
+    {% endfor %} 
+    
+</ul>
+
+<textarea rows="4" cols="50">
+    Leave Comments Here
+</textarea>
+
+</div>
+{% endblock content %} 
